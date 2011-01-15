@@ -1,6 +1,6 @@
-package goo.TeaTimer.Animation;
-import goo.TeaTimer.R;
-import goo.TeaTimer.TimerUtils;
+package org.superarts.android.AwesomeTimer.Animation;
+import org.superarts.android.AwesomeTimer.R;
+import org.superarts.android.AwesomeTimer.TimerUtils;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;

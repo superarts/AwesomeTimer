@@ -5,17 +5,17 @@
  * the Free Software Foundation, either version 3 of the License, or
  * any later version. More info: http://www.gnu.org/licenses/
  *  
- * Copyright 2009 Ralph Gootee <rgootee@gmail.com>
+ * Copyright 2011 Leo <en.superarts.org>
  *  
  */
 
-package goo.TeaTimer;
+package org.superarts.android.AwesomeTimer;
 
-import goo.TeaTimer.Animation.TimerAnimation;
-import goo.TeaTimer.Animation.TimerAnimation.TimerDrawing;
-import goo.TeaTimer.widget.NNumberPickerDialog;
-import goo.TeaTimer.widget.NumberPicker;
-import goo.TeaTimer.widget.NNumberPickerDialog.OnNNumberPickedListener;
+import org.superarts.android.AwesomeTimer.Animation.TimerAnimation;
+import org.superarts.android.AwesomeTimer.Animation.TimerAnimation.TimerDrawing;
+import org.superarts.android.AwesomeTimer.widget.NNumberPickerDialog;
+import org.superarts.android.AwesomeTimer.widget.NumberPicker;
+import org.superarts.android.AwesomeTimer.widget.NNumberPickerDialog.OnNNumberPickedListener;
 
 import java.util.Date;
 import java.util.Timer;
@@ -50,11 +50,17 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.admob.android.ads.AdManager;
+import com.mobclix.android.sdk.MobclixAdView;
+import com.mobclix.android.sdk.MobclixAdViewListener;
+import com.mobclix.android.sdk.MobclixIABRectangleMAdView;
+import com.mobclix.android.sdk.MobclixMMABannerXLAdView;
+
 /**
  * The main activity which shows the timer and allows the user to set the time
- * @author Ralph Gootee (rgootee@gmail.com)
+ * @author Leo (en.superarts.org)
  */
-public class TimerActivity extends Activity implements OnClickListener,OnNNumberPickedListener,OnSharedPreferenceChangeListener
+public class TimerActivity extends Activity implements OnClickListener,OnNNumberPickedListener,OnSharedPreferenceChangeListener,MobclixAdViewListener
 {
 	/** All possible timer states */
 	private final static int RUNNING=0, STOPPED=1, PAUSED=2;
@@ -133,7 +139,8 @@ public class TimerActivity extends Activity implements OnClickListener,OnNNumber
 	private SharedPreferences mSettings;
 
 	private WakeLock mWakeLock;
-    
+   
+	MobclixMMABannerXLAdView adview_banner;
 	/** Called when the activity is first created.
      *	{ @inheritDoc} 
      */
@@ -142,6 +149,13 @@ public class TimerActivity extends Activity implements OnClickListener,OnNNumber
     {    	
     	super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
+		//AdManager.setTestDevices( new String[] { AdManager.TEST_EMULATOR } );
+		//AdManager.setTestDevices(new String[] { AdManager.TEST_EMULATOR, "D81E0EFAB674357C2895265D9C5C13D5" });        
+		//AdManager.setTestAction("video_int");
+		adview_banner = (MobclixMMABannerXLAdView) findViewById(R.id.mobclix_banner_view);
+		adview_banner.addMobclixAdViewListener(this);
+		//adview_banner.getAd();
 
 		mCancelButton = (ImageButton)findViewById(R.id.cancelButton);
         mCancelButton.setOnClickListener(this);
@@ -171,7 +185,7 @@ public class TimerActivity extends Activity implements OnClickListener,OnNNumber
         
 		mSettings.registerOnSharedPreferenceChangeListener(this);
     }
-    
+   
 
     /** { @inheritDoc} */
     @Override
@@ -612,5 +626,33 @@ public class TimerActivity extends Activity implements OnClickListener,OnNNumber
 			else releaseWakeLock();
 		}
 	}
-		
+
+	/*
+	 * MOBCLIX
+	 */
+	public void onSuccessfulLoad(MobclixAdView view) {
+		Log.v("MOBCLIXA", "The ad request was successful!");
+		view.setVisibility(View.VISIBLE);
+	}
+
+	public void onFailedLoad(MobclixAdView view, int errorCode) {
+		Log.v("MOBCLIXA", "The ad request failed with error code: " + errorCode);
+		view.setVisibility(View.GONE);
+	}
+
+	public void onAdClick(MobclixAdView adView) {
+		Log.v("MOBCLIXA", "Ad clicked!");
+	}
+
+	public void onCustomAdTouchThrough(MobclixAdView adView, String string) {
+		Log.v("MOBCLIXA", "The custom ad responded with '" + string + "' when touched!");
+	}
+
+	public boolean onOpenAllocationLoad(MobclixAdView adView, int openAllocationCode) {
+		Log.v("MOBCLIXA", "The ad request returned open allocation code: " + openAllocationCode);
+		return false;
+	}
+	
+	public String keywords()    { return "timer,time";}
+	public String query()       { return "query";}
 }

@@ -1,4 +1,4 @@
-package goo.TeaTimer;
+package org.superarts.android.AwesomeTimer;
 
 
 import android.database.Cursor;
@@ -53,7 +53,7 @@ public class TimerPrefActivity extends PreferenceActivity
 		}
         
     	CharSequence [] entries = {"No Sound","Big Ben"};
-    	CharSequence [] entryValues = {"","android.resource://goo.TeaTimer/" + R.raw.big_ben};
+    	CharSequence [] entryValues = {"","android.resource://org.superarts.android.AwesomeTimer/" + R.raw.big_ben};
     	
     	//Default value
     	if(tone.getValue() == null) tone.setValue((String)entryValues[1]);

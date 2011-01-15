@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
  */
-package goo.TeaTimer.widget;
+package org.superarts.android.AwesomeTimer.widget;
 
 import android.content.Context;
 import android.os.Handler;
@@ -36,7 +36,7 @@ import android.view.animation.TranslateAnimation;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import goo.TeaTimer.R;
+import org.superarts.android.AwesomeTimer.R;
 
 public class NumberPicker extends LinearLayout implements OnClickListener,
         OnFocusChangeListener, OnLongClickListener {

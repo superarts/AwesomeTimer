@@ -1,13 +1,13 @@
-/*package goo.TeaTimer.Animation;
+/*package org.superarts.android.AwesomeTimer.Animation;
 
-import goo.TeaTimer.R;
+import org.superarts.android.AwesomeTimer.R;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import goo.TeaTimer.TimerUtils;
+import org.superarts.android.AwesomeTimer.TimerUtils;
 
 class TresBarAnimation implements TimerAnimation.TimerDrawing
 {

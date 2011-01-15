@@ -1,6 +1,6 @@
-package goo.TeaTimer.Animation;
+package org.superarts.android.AwesomeTimer.Animation;
 
-import goo.TeaTimer.R;
+import org.superarts.android.AwesomeTimer.R;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;

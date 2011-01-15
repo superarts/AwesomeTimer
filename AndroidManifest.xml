@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="goo.TeaTimer"
+      package="org.superarts.android.AwesomeTimer"
       android:versionName="1.6" android:versionCode="9">
-    
-    <uses-permission android:name="android.permission.VIBRATE" />
-      
     <application android:debuggable="false" android:icon="@drawable/icon" android:label="@string/app_name">
         <activity android:label="@string/app_name" 
         		android:name=".TimerActivity"
@@ -19,11 +16,32 @@
                 <action android:name="android.intent.action.CATEGORY_PREFERENCE" />
             </intent-filter>
         </activity>
-   	 	
-	<receiver android:name=".TimerReceiver" ></receiver>
+		<receiver android:name=".TimerReceiver" ></receiver>
+
+		<!--
+		<meta-data android:value="a149c8dafba8028" android:name="ADMOB_PUBLISHER_ID" />
+		-->
+		<meta-data android:value="a14d30585bb3265" android:name="ADMOB_PUBLISHER_ID" />
+		<activity android:name="com.admob.android.ads.AdMobActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:configChanges="orientation|keyboard|keyboardHidden" />
+		<receiver android:name="com.admob.android.ads.analytics.InstallReceiver" android:exported="true">
+			<intent-filter>
+				<action android:name="com.android.vending.INSTALL_REFERRER" />
+			</intent-filter> 
+		</receiver>
+
+		<!--
+		<meta-data android:name="com.mobclix.APPLICATION_ID" android:value="insert-your-application-key"/>
+		-->
+		<meta-data android:name="com.mobclix.APPLICATION_ID" android:value="453EA50B-F472-4296-A06C-9D4300D87DFB"/>
+		<meta-data android:name="com.mobclix.LOG_LEVEL" android:value="DEBUG"/>
+		<activity android:name="com.mobclix.android.sdk.MobclixBrowserActivity"/>
 </application>
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.GET_TASKS"></uses-permission>
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
 
-	 <uses-sdk android:minSdkVersion="3" />
-
-<uses-permission android:name="android.permission.WAKE_LOCK"></uses-permission>
+	<uses-sdk android:minSdkVersion="4" />
+	<uses-permission android:name="android.permission.WAKE_LOCK"></uses-permission>
+    <uses-permission android:name="android.permission.VIBRATE" />
 </manifest> 

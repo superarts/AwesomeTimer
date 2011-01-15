@@ -17,9 +17,9 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
  */
-package goo.TeaTimer.widget;
+package org.superarts.android.AwesomeTimer.widget;
 
-import goo.TeaTimer.R;
+import org.superarts.android.AwesomeTimer.R;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.KeyEvent;

@@ -1,6 +1,6 @@
-package goo.TeaTimer.Animation;
+package org.superarts.android.AwesomeTimer.Animation;
 
-import goo.TeaTimer.R;
+import org.superarts.android.AwesomeTimer.R;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -13,7 +13,7 @@ import android.graphics.RectF;
  * The trash cup naming comes from the fact that the cup reminds my friends
  * of a "trash can"
  * 
- * @author Ralph Gootee (rgootee@gmail.com)
+ * @author Leo (en.superarts.org)
  *
  */
 class TrashCupAnimation implements TimerAnimation.TimerDrawing

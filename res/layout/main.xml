@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+<LinearLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android" 
+	xmlns:myapp="http://schemas.android.com/apk/res/org.superarts.android.AwesomeTimer"
     android:orientation="vertical"
     android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
-    >
-    
+	>
+<com.mobclix.android.sdk.MobclixMMABannerXLAdView
+	android:id="@+id/mobclix_banner_view"
+	android:layout_height="50dip"
+	android:layout_width="320dip"
+	android:layout_gravity="center"
+	/>
+<com.admob.android.ads.AdView 
+	android:id="@+id/ad" 
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content" 
+	myapp:backgroundColor="#000000" 
+	myapp:primaryTextColor="#FFFFFF" 
+	myapp:secondaryTextColor="#CCCCCC"
+	/>
 <LinearLayout 
     android:orientation="vertical"
     android:layout_width="fill_parent"
@@ -14,21 +29,15 @@
 	android:paddingLeft="30px"
 	android:paddingRight="30px"
 	android:background="@drawable/border"
-	android:paddingBottom="15px" android:layout_marginTop="15px">
+	android:paddingBottom="15px"
+	android:layout_marginTop="15px">
 	
-	<TextView 
-		android:id="@+id/label"
-	    android:layout_width="fill_parent" 
-	    android:layout_height="wrap_content" 
-		android:text="00:00"
-		android:textSize="80px"
-		android:gravity="center" android:paddingBottom="5px"/>
-		
 	<LinearLayout 
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal"
 		android:id="@+id/control"
+		android:layout_marginTop="20px">
 		>
 	
 		<ImageButton 
@@ -59,9 +68,18 @@
 			android:drawableLeft="@drawable/set"
 			/>
 	</LinearLayout>
+
+	<TextView 
+		android:id="@+id/label"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+		android:text="00:00"
+		android:textSize="80px"
+		android:gravity="center" android:paddingBottom="5px"/>
+		
 </LinearLayout>
 
-<goo.TeaTimer.Animation.TimerAnimation
+<org.superarts.android.AwesomeTimer.Animation.TimerAnimation
 	android:id="@+id/imageView"
 	android:layout_margin="20px"
 	android:layout_width="fill_parent"

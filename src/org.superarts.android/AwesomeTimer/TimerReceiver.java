@@ -1,4 +1,4 @@
-package goo.TeaTimer;
+package org.superarts.android.AwesomeTimer;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -29,7 +29,7 @@ public class TimerReceiver extends BroadcastReceiver
 		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
         boolean led = settings.getBoolean("LED",true);
         boolean vibrate = settings.getBoolean("Vibrate",true);
-        String notificationUri = settings.getString("NotificationUri", "android.resource://goo.TeaTimer/" + R.raw.big_ben);
+        String notificationUri = settings.getString("NotificationUri", "android.resource://org.superarts.android.AwesomeTimer/" + R.raw.big_ben);
         	
 		CharSequence text = context.getText(R.string.Notification);
 		CharSequence textLatest = "Timer for " + setTimeStr;

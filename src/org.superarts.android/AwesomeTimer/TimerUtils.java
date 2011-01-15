@@ -1,4 +1,4 @@
-package goo.TeaTimer;
+package org.superarts.android.AwesomeTimer;
 
 public class TimerUtils {
 	

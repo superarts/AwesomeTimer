@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Tea Timer</string>
+    <string name="app_name">Awesome Timer</string>
 	<string name="Start">Set Timer</string>
 	<string name="Stop">Clear</string>
 
-	<string name="Notification">Tea time!</string>
+	<string name="Notification">Time up!</string>
 	<string name="InputTitle">Hour:Min.Sec</string>
 
-	<string name="warning_text">The phone is in silent mode! Notification vibration and sound will be supressed.</string>
+	<string name="warning_text">Your phone is in silent mode! Notification vibration and sound will be supressed.</string>
 	<string name="warning_title">Warning</string>
-	<string name="warning_button">Ok</string>
+	<string name="warning_button">OK</string>
 	
 	<string name="prefs">Preferences</string>
 	
 	<!-- Preferences -->
 	<string name="notification">Notification</string>
 	<string name="notification_sound">Notification Diddy</string>
-	<string name="notification_sound_desc">The notification's sound effects.</string>
+	<string name="notification_sound_desc">The sound effect of notification.</string>
 	
 </resources>
 
